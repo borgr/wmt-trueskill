@@ -26,9 +26,9 @@ if __name__ == '__main__':
     for i in range(1000):
         result.append(choose(['a', 'b', 'c', 'd'], [0.4, 0.3, 0.2, 0.1]))
 
-    print 'a: ' + str(result.count('a')),
-    print 'b: ' + str(result.count('b')),
-    print 'c: ' + str(result.count('c')),
-    print 'd: ' + str(result.count('d'))
+    print('a: ' + str(result.count('a')),)
+    print('b: ' + str(result.count('b')),)
+    print('c: ' + str(result.count('c')),)
+    print('d: ' + str(result.count('d')))
 
 

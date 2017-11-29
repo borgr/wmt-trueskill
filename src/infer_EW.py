@@ -34,7 +34,7 @@ def expected_win():
     if args.replacement:
         dataset = [pw for pw in wmt.pairs(sys.stdin, numsys=args.num_systems)]
 
-        print >> sys.stderr, "Bootstrap resampling %d of %d samples" % (args.dp_pct * len(dataset), len(dataset))
+        print("Bootstrap resampling %d of %d samples" % (args.dp_pct * len(dataset), len(dataset)), file=sys.stderr)
         for i in range(int(args.dp_pct * len(dataset))):
             s1, s2, obs = random.choice(dataset)
             all_systems[s1] = 1

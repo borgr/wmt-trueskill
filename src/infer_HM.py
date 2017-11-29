@@ -102,11 +102,11 @@ def estimate(all_systems, sent_sys_rank):
         system_quality[system]  = t
         tmp_mean.append(t[0])
         if '.' in system:
-            print "%s\t" %(system.split('.')[2]),
+            print("%s\t" %(system.split('.')[2]),)
         else:
-            print "%s\t" %system,
+            print ("%s\t" %system,)
         sentence_quality[system] = {}
-    print
+    print()
 
     ### Normalize means
     s_mean = np.mean(tmp_mean)
@@ -166,8 +166,8 @@ def estimate(all_systems, sent_sys_rank):
                 sampled_mu[system].append(new_mu)
 
         for r in tentative_rank:
-            print "%.4f\t" %(r[0]),
-        print
+            print ("%.4f\t" %(r[0]),)
+        print()
    
     estimated_mu_sigma = defaultdict(list)
     for system in all_systems:

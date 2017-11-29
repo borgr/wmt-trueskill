@@ -155,7 +155,7 @@ def estimate_by_number():
         else:
             data_points = num_iter_org  # by # of matches
         num_iter = int(args.dp_pct * data_points)
-        print >> sys.stderr, "Sampling %d / %d pairwise judgments" % (num_iter, data_points)
+        print("Sampling %d / %d pairwise judgments" % (num_iter, data_points), file=sys.stderr)
         param_beta = param_sigma * (num_iter/40.0)
         env = TrueSkill(mu=0.0, sigma=param_sigma, beta=param_beta, tau=param_tau, draw_probability=draw_rate)
         env.make_as_global()
@@ -195,7 +195,7 @@ def estimate_by_number():
 
                 if (args.freeN == 2) and (num_iter_org == num_record[-1]) and args.heat:
                     f = open(args.prefix + '-' + str(count_begin)+'-'+str(count_end)+'_count.json', 'w')
-                    sys_names = zip(*sort_by_mu(system_rating))[1]
+                    sys_names = list(zip(*sort_by_mu(system_rating)))[1]
                     counts = get_counts(sys_names, counter_dict, num_play)
                     outf = {}
                     outf['sysname'] = sys_names
